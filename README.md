@@ -2,28 +2,28 @@
 
 Used to compile and deploy Phala pRuntime
 
-# Compile docker from Dockerfile
+## Compile docker from Dockerfile
 
 ```sh
 docker build -t <name:tag> .
 ```
 
-# Or download precompiled docker image
+## Or download precompiled docker image
 
 ```sh
 docker pull tolak/phala-pruntime-docker
 ```
 
-# Run docker container
+## Run docker container
 
 ```sh
-docker run -it 
-    -p 9711:9711 \
-    -v <pruntime source code dir>:/pruntime \
+docker run \
+    -it -p 9711:9711 \
+    -v <phala-blochain source code dir>:/root/phala-blockchain \
     --name pruntime tolak/phala-pruntime-docker
 ```
 
-# Compile & run
+## Compile & run
 
  - compile pRuntime
 
@@ -36,9 +36,10 @@ docker attach <container id>
 execute within container,  run ```SGX_MODE=SW make``` for simulation mode if you don't have the hardware
 
 ```sh
-cd /pruntime/
+cd /root/phala-blockchain/
 git submodule init
 git submodule update
+cd pruntime
 SGX_MODE=SW make
 ```
 
