@@ -18,7 +18,7 @@ docker pull tolak/phala-pruntime-docker
 
 ```sh
 docker run \
-    -it -p 9711:9711 \
+    -it -p 8000:8000 \
     -v <phala-blochain source code dir>:/root/phala-blockchain \
     --name pruntime tolak/phala-pruntime-docker
 ```

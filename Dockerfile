@@ -40,4 +40,4 @@ ENV SGX_SDK=/opt/sgxsdk
 WORKDIR /root
 
 # for TEE web service
-EXPOSE 9711
+EXPOSE 8000
